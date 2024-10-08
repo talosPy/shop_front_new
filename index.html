@@ -51,7 +51,7 @@
     </div>
 
     <script>
-        const HOST = 'http://127.0.0.1:8000'
+        const HOST = 'https://my-shop-django-api-bwls.onrender.com'
         // Function to fetch all
         async function fetchAll() {
             await fetchCategories()
@@ -88,10 +88,10 @@
                     const product = products[i];
                     const productItem = document.createElement('a');
                     productItem.className = 'list-group-item list-group-item-action';
-                    productItem.href = `/front/product.html?id=${product.id}`;
+                    productItem.href = `/product.html?id=${product.id}`;
                     const categoryNames = product.category.map(cat => cat.name).join(', ');
                     productItem.innerHTML = `<strong>${product.name}</strong> - $${product.price} - ${categoryNames}`;
-                    productItem.innerHTML += `<img src="${HOST}/${product.image}/" class="product-image"/>`
+                    productItem.innerHTML += `<img src="${HOST}${product.image}/" class="product-image"/>`
                     // Create delete link with an onclick function
                     const deleteLink = document.createElement('a');
                     deleteLink.className = 'text-danger ml-3';
